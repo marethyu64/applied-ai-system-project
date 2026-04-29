@@ -99,15 +99,7 @@ Output (sample):
 
 ## Design Decisions and Trade-offs
 
-- NIM-only decision path: the recommender now requires a NIM key and fails fast if unavailable.
-  - Trade-off: improved consistency and AI quality, but no offline fallback behavior.
-- Retrieval + reranking architecture:
-  - Retrieval provides deterministic candidate grounding from the CSV.
-  - NIM reranking adds semantic interpretation and more natural explanations.
-  - Trade-off: better relevance, but extra API dependency and latency.
-- Follow-up questioning:
-  - Year, mood, energy, and preferences improve recommendation precision.
-  - Trade-off: slightly longer user interaction.
+I decided to make the recommender purely AI driven, as it will require a NIM key to work and will fail if it's not there. The tradeoff for this is that there's more consistency and improved outputs based on AI feedback, but no fallback behavior if the AI isn't present. In addition, another tradeoff I made was have longer follow-up questions, which made a longer user interaction but improved precision on the outputs. 
 
 ## Reliability and Evaluation Methods
 

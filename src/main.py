@@ -1,7 +1,3 @@
-"""
-Command-line runner for converting modern taste into classic equivalents.
-"""
-
 import os
 from .recommender import recommend_from_vibe
 
